@@ -15,6 +15,7 @@ public class CellImpl implements Cell
     public void editContents(String contentToAdd)
     {
         cellContents = contentToAdd;
+        System.out.println("Cell Updated Successfully");
     }
 
 

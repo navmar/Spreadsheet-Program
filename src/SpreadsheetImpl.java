@@ -31,7 +31,7 @@ public class SpreadsheetImpl implements Spreadsheet
             {
 
                 matrix[i][j].displayContents();
-                System.out.print("\t\t\t\t");
+                System.out.print("\t|\t");
             }
             System.out.println();
         }
