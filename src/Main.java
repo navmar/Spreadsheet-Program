@@ -1,3 +1,8 @@
+//FILE WRITING PLAN
+//Format for files
+//file writer & reader class
+//User picks - open book using path or create new book
+//Ask on logic solution > try/catch
 import java.util.Scanner;
 
 public class Main
