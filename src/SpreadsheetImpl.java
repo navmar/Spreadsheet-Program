@@ -7,7 +7,7 @@ public class SpreadsheetImpl implements Spreadsheet
     //Create the spreadsheet; add cells
     public SpreadsheetImpl()
     {
-        matrix = new Cell[5][5];
+        matrix = new Cell[5][5]; //get values from client
         for (int i = 0; i < matrix.length; i++)
         {
             for (int j = 0; j < matrix.length; j++)
@@ -30,8 +30,9 @@ public class SpreadsheetImpl implements Spreadsheet
             for (int j = 0; j < matrix.length; j++)
             {
 
+                System.out.print("[");
                 matrix[i][j].displayContents();
-                System.out.print("\t|\t");
+                System.out.print("]");
             }
             System.out.println();
         }

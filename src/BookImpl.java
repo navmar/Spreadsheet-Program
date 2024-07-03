@@ -18,7 +18,10 @@ public class BookImpl implements Book
         {
             return true;
         }
-        else return false;
+        else
+        {
+            return false;
+        }
     }
 
 
