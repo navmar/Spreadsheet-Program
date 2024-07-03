@@ -159,7 +159,7 @@ public class Main
 
                                     System.out.print("Column: ");
                                     column = Integer.parseInt(scanner.nextLine());
-
+ 
                                     System.out.print("Content: ");
                                     content = scanner.nextLine();
 
