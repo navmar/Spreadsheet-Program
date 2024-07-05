@@ -46,19 +46,28 @@
 
 import java.util.Scanner;
 import java.io.FileWriter;
-
-
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 public class Main
 {
     public static void main(String[] args)
     {
 
-        FileToSpreadsheetProcessor fp = new FileToSpreadsheetProcessorImpl("Text.txt");
-        fp.readTextFromFile();
 
-        Scanner scanner = new Scanner(System.in);
 
         Book book = new BookImpl();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the path of the book: ");
+        String path = scanner.nextLine();
+
+
+            //FileToBookProcessor fp = new  FileToBookProcessorImpl(path);
+            List<String> fileContent = fp.readTextFromFile();
+            book = fp.generateBook(fileContent);
+
+
 
         while (true)
         {
@@ -75,7 +84,7 @@ public class Main
             String option = scanner.nextLine();
             if (option.equals("1"))
             {
-                book.createNewSpreadsheet();
+                book.createNewSpreadsheet(false);
             }
 
             else if (option.equals("2"))
@@ -159,11 +168,11 @@ public class Main
 
                                     System.out.print("Column: ");
                                     column = Integer.parseInt(scanner.nextLine());
- 
+
                                     System.out.print("Content: ");
                                     content = scanner.nextLine();
 
-                                    book.openSpreadsheet(spreadSheetNum).navigateToCell(row, column).editContents(content);
+                                    book.openSpreadsheet(spreadSheetNum).navigateToCell(row, column).editContents(content, false);
 
 
                                 } catch (Exception e)

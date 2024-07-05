@@ -1,5 +1,5 @@
 public interface Cell
 {
     void displayContents();
-    void editContents(String contentToAdd);
+    void editContents(String contentToAdd, boolean silentMode);
 }

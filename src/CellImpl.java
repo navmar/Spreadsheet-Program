@@ -12,10 +12,13 @@ public class CellImpl implements Cell
         System.out.print(cellContents);
     }
 
-    public void editContents(String contentToAdd)
+    public void editContents(String contentToAdd, boolean silentMode)
     {
         cellContents = contentToAdd;
-        System.out.println("Cell Updated Successfully");
+        if (!silentMode)
+        {
+            System.out.println("Cell Updated Successfully");
+        }
     }
 
 

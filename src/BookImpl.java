@@ -36,11 +36,14 @@ public class BookImpl implements Book
     }
 
 
-    public void createNewSpreadsheet()
+    public void createNewSpreadsheet(boolean silentMode)
     {
         Spreadsheet spreadsheet = new SpreadsheetImpl();
         spreadsheets.add(spreadsheet);
-        System.out.println("Spreadsheet created.");
+        if (!silentMode)
+        {
+            System.out.println("Spreadsheet created.");
+        }
     }
 
 
@@ -55,6 +58,9 @@ public class BookImpl implements Book
     {
         return spreadsheets.get(spreadsheetNumber);
     }
+
+
+
 
 
 }
