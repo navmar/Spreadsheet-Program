@@ -13,15 +13,16 @@ public class SpreadsheetMenuImpl implements Menu
 
     }
 
+    //When the user wants to reference a new book or change the spreadsheet number to look at
     public void changeBook(Book bookP)
     {
         book = bookP;
     }
-
     public void changeSpreadsheetNumber(int spreadSheetNumP)
     {
         spreadSheetNum = spreadSheetNumP;
     }
+
 
 
     public void displayOptions()
@@ -39,6 +40,7 @@ public class SpreadsheetMenuImpl implements Menu
         System.out.print("Your choice: ");
         String option2 = scanner.nextLine();
 
+        //Change data in the spreadsheet
         if (option2.equals("1"))
         {
             String content = "";
@@ -68,12 +70,15 @@ public class SpreadsheetMenuImpl implements Menu
 
 
         }
+
+        //Display all the data in the spreadsheet
         else if (option2.equals("2"))
         {
             System.out.println("");
             book.openSpreadsheet(spreadSheetNum).showAllCells();
         }
 
+        //Break out of the loop and get back to the previous menu
         else if (option2.equals("3"))
         {
             return false;
@@ -82,6 +87,7 @@ public class SpreadsheetMenuImpl implements Menu
         return true;
     }
 
+    //Handles returning back to the menu after some operations are complete
     public void loopOperations()
     {
         boolean cont = true;

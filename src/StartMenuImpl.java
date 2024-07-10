@@ -4,6 +4,8 @@ import java.util.List;
 public class StartMenuImpl implements Menu
 {
     Scanner scanner = new Scanner(System.in);
+
+    //Aggregation - this has a submenu (main menu)
     private MainMenuImpl mainMenu = new MainMenuImpl();
 
     public StartMenuImpl()
@@ -23,6 +25,8 @@ public class StartMenuImpl implements Menu
         System.out.print("Enter your choice: ");
 
         String option = scanner.nextLine();
+
+        //Create a new book
         if (option.equals("1"))
         {
             Book book = new BookImpl();
@@ -31,6 +35,7 @@ public class StartMenuImpl implements Menu
             mainMenu.loopOperations();
         }
 
+        //open existing book
         else if (option.equals("2"))
         {
             System.out.print("Enter the path of the book: ");
@@ -54,7 +59,7 @@ public class StartMenuImpl implements Menu
         return true;
     }
 
-
+    //Same purpose as the function in the other two menu classes
     public void loopOperations()
     {
         boolean cont = true;

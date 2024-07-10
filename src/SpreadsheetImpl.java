@@ -7,7 +7,7 @@ public class SpreadsheetImpl implements Spreadsheet
     //Create the spreadsheet; add cells
     public SpreadsheetImpl()
     {
-        matrix = new Cell[5][5]; //get values from client
+        matrix = new Cell[5][5]; //get size values from user in the future
         for (int i = 0; i < matrix.length; i++)
         {
             for (int j = 0; j < matrix.length; j++)

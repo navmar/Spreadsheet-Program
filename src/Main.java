@@ -55,10 +55,10 @@
 //csv values + handling of extra commas
 //throwing the exception
 
-import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
+
+//===========All comments above are for my reference ===============================//
+
+
 public class Main
 {
     public static void main(String[] args)
@@ -67,6 +67,8 @@ public class Main
 
             Menu startMenu = new StartMenuImpl();
             startMenu.loopOperations();
+            //loop operations ensures after the user completes actions he will return back to the start menu
+
 
 
 

@@ -21,6 +21,7 @@ public class FileToBookProcessorImpl implements  FileToBookProcessor
     }
 
 
+    //THIS IS A SINGLETON
     public static FileToBookProcessor getInstance()
     {
         return instance;
@@ -37,6 +38,7 @@ public class FileToBookProcessorImpl implements  FileToBookProcessor
 
 
 
+    //Extract the text from the file
     public List<String> readTextFromFile() throws Exception
     {
         List<String> fileContent = new ArrayList();
@@ -56,6 +58,7 @@ public class FileToBookProcessorImpl implements  FileToBookProcessor
         return fileContent;
     }
 
+    //Decode the text
     public Book generateBook(List<String> textToDecode)
     {
         Book temporaryBook = new BookImpl();
@@ -73,7 +76,7 @@ public class FileToBookProcessorImpl implements  FileToBookProcessor
                 for (String row : textToDecode)
                 {
 
-                    //System.out.println(rowNum + " " + columnNum);
+
                     if (!row.equals("*****"))
                     {
                         if (!row.equals("$$$$$"))

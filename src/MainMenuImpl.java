@@ -7,6 +7,10 @@ public class MainMenuImpl implements Menu
 
     Scanner scanner = new Scanner(System.in);
 
+    //AGGREGATION - this menu contains a submenu that is the spreadsheet menu
+    //I did this to prevent creating multiple instances of spreadsheet menu
+    //I only have 1 spreadsheet menu object that can have its attributes i.e. book and spreadsheet number changed
+
     private SpreadsheetMenuImpl spreadsheetMenu = new SpreadsheetMenuImpl();
 
 
@@ -36,16 +40,18 @@ public class MainMenuImpl implements Menu
 
     public boolean handleInput()
     {
-        //scanner
+
         System.out.println();
         System.out.print("Enter your choice: ");
 
+        //Create new spreadsheet
         String option = scanner.nextLine();
         if (option.equals("1"))
         {
             book.createNewSpreadsheet(false);
         }
 
+        //Show list of existing spreadsheets
         else if (option.equals("2"))
         {
             if (book.isEmpty())
@@ -59,6 +65,7 @@ public class MainMenuImpl implements Menu
 
         }
 
+        //Remove spreadsheets from the book
         else if (option.equals("3"))
         {
             if (book.isEmpty())
@@ -81,6 +88,8 @@ public class MainMenuImpl implements Menu
                 }
             }
         }
+
+        //Open a spreadsheet to e.g. edit cells
         else if (option.equals("4"))
         {
             if (book.isEmpty())
@@ -109,11 +118,14 @@ public class MainMenuImpl implements Menu
                 }
             }
         }
+
+        //Leave and go back to the start menu
         else if (option.equals("5"))
         {
             return false;
         }
 
+        //Save the contents of the book to a file
         else if (option.equals("6"))
         {
             System.out.print("Enter the file name: ");
@@ -125,6 +137,8 @@ public class MainMenuImpl implements Menu
         return true;
     }
 
+
+    //Same purpose as for spreadsheetmenu and start menu
     public void loopOperations()
     {
         boolean cont = true;
