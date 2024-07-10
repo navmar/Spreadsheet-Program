@@ -7,6 +7,7 @@ public interface Book
     void createNewSpreadsheet(boolean silentMode);
     void removeSpreadsheet(int spreadsheetNumber);
     boolean isEmpty();
+    int getNumOfSpreadsheets();
 
 
 }

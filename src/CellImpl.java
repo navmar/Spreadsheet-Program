@@ -21,5 +21,10 @@ public class CellImpl implements Cell
         }
     }
 
+    public String returnContents()
+    {
+        return cellContents;
+    }
+
 
 }

@@ -42,10 +42,20 @@
 
 
 
+//Try catch in file to book impl (if statement usage)
+//Lack of try catch in booktofile
+//file format
+//silent mode
+//show file reading and writing & singleton
+//only thing remaining is user interaction
+//notes on cells and booktofile class
 
+
+//singleton for scanner
+//csv values + handling of extra commas
+//throwing the exception
 
 import java.util.Scanner;
-import java.io.FileWriter;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -55,157 +65,12 @@ public class Main
     {
 
 
-
-        Book book = new BookImpl();
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the path of the book: ");
-        String path = scanner.nextLine();
-
-
-            //FileToBookProcessor fp = new  FileToBookProcessorImpl(path);
-            List<String> fileContent = fp.readTextFromFile();
-            book = fp.generateBook(fileContent);
+            Menu startMenu = new StartMenuImpl();
+            startMenu.loopOperations();
 
 
 
-        while (true)
-        {
-            System.out.println();
 
-            System.out.println("1. Create new spreadsheet");
-            System.out.println("2. View spreadsheets");
-            System.out.println("3. Delete a spreadsheet");
-            System.out.println("4. Open a spreadsheet");
-
-            System.out.println();
-            System.out.print("Enter your choice: ");
-
-            String option = scanner.nextLine();
-            if (option.equals("1"))
-            {
-                book.createNewSpreadsheet(false);
-            }
-
-            else if (option.equals("2"))
-            {
-                if (book.isEmpty())
-                {
-                    System.out.println("No sheets to print");
-                }
-
-                else
-                {
-                    book.showSpreadsheets();
-                }
-
-            }
-
-            else if (option.equals("3"))
-            {
-                if (book.isEmpty())
-                {
-                    System.out.println("No sheets to remove");
-                }
-
-                else
-                {
-                    try
-                    {
-                        System.out.println("Enter the spreadsheet number to remove. ");
-                        int spreadSheetNum = Integer.parseInt(scanner.nextLine()) - 1; //this kind of inputting
-                        //modularise code
-                        book.removeSpreadsheet(spreadSheetNum);
-                    }
-                    catch (Exception e)
-                    {
-                        System.out.println("Invalid spreadsheet number");
-                    }
-                }
-            }
-
-
-
-            else if (option.equals("4"))
-            {
-                if (book.isEmpty())
-                {
-                    System.out.println("No sheets to open");
-                }
-
-                else
-                {
-
-                    try //is it okay to encapsulate the entire while loop in the try block? Any try statements within will be given precedence for internal errors right?
-                    {
-                        System.out.println("Enter the spreadsheet number to open. ");
-                        int spreadSheetNum = Integer.parseInt(scanner.nextLine()) - 1;
-                        book.openSpreadsheet(spreadSheetNum); //is it okay to use this line of code to test validity? // to keep at moment but better solution later
-
-                        while (true)
-                        {
-                            System.out.println();
-
-                            System.out.println("Pick an operation: ");
-                            System.out.println("1. Edit Cell");
-                            System.out.println("2. View spreadsheet");
-                            System.out.println("3. Go back");
-
-                            System.out.print("Your choice: ");
-                            String option2 = scanner.nextLine(); //Here chose to have a different name to prevent clash
-
-                            if (option2.equals("1"))
-                            {
-                                String content = "";
-                                int row; //example
-                                int column;
-
-
-                                try
-                                {
-                                    System.out.print("Row: ");
-                                    row = Integer.parseInt(scanner.nextLine());
-
-                                    System.out.print("Column: ");
-                                    column = Integer.parseInt(scanner.nextLine());
-
-                                    System.out.print("Content: ");
-                                    content = scanner.nextLine();
-
-                                    book.openSpreadsheet(spreadSheetNum).navigateToCell(row, column).editContents(content, false);
-
-
-                                } catch (Exception e)
-                                {
-                                    System.out.println("Please enter a valid number for the row and column.");
-                                }
-
-
-                            } else if (option2.equals("2"))
-                            {
-                                System.out.println("");
-                                book.openSpreadsheet(spreadSheetNum).showAllCells();
-                            } else if (option2.equals("3"))
-                            {
-                                break;
-                            }
-
-                        }
-                    }
-
-                    catch(Exception e)
-                    {
-                        System.out.println("Invalid Spreadsheet Number");
-                    }
-                }
-
-            }
-
-
-            //Push
-
-
-        }
 
     }
 }

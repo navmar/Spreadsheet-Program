@@ -6,20 +6,38 @@ import java.util.ArrayList;
 //csv writer
 
 //confirmation msgs from each class here.
+//throws exception
 
 public class FileToBookProcessorImpl implements  FileToBookProcessor
 {
 
-    private FileToBookProcessor instance = null;
+    private static FileToBookProcessor instance = new FileToBookProcessorImpl();
 
     String filePath;
 
-    private FileToBookProcessorImpl(String path)
+    private FileToBookProcessorImpl()
+    {
+
+    }
+
+
+    public static FileToBookProcessor getInstance()
+    {
+        return instance;
+    }
+
+
+    public void setFilePath(String path)
     {
         filePath = path;
     }
 
-    public List<String> readTextFromFile() //throws Exception
+
+
+
+
+
+    public List<String> readTextFromFile() throws Exception
     {
         List<String> fileContent = new ArrayList();
         try
@@ -28,7 +46,9 @@ public class FileToBookProcessorImpl implements  FileToBookProcessor
         }
         catch(Exception e)
         {
-            System.out.println("The path is not valid.");
+
+            throw e;
+
 
         }
 

@@ -39,6 +39,19 @@ public class SpreadsheetImpl implements Spreadsheet
     }
 
 
+    public int returnNumOfColumns()
+    {
+        return 5;
+    }
+
+    public int returnNumOfRows()
+    {
+        return 5;
+    }
+
+
+
+
 
 
 }

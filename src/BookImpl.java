@@ -59,6 +59,11 @@ public class BookImpl implements Book
         return spreadsheets.get(spreadsheetNumber);
     }
 
+    public int getNumOfSpreadsheets()
+    {
+        return spreadsheets.size();
+    }
+
 
 
 
