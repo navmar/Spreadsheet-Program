@@ -1,3 +1,5 @@
+package Entities.Cell;
+
 public interface Cell
 {
     void displayContents();

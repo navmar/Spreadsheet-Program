@@ -1,12 +1,19 @@
+package Services.Menu;
+
+import Entities.Book.Book;
+import Entities.Book.BookImpl;
+import Services.FileProcessing.FileToBookProcessor;
+import Services.FileProcessing.FileToBookProcessorImpl;
+
 import java.util.Scanner;
 import java.util.List;
 
 public class StartMenuImpl implements Menu
 {
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
     //Aggregation - this has a submenu (main menu)
-    private MainMenuImpl mainMenu = new MainMenuImpl();
+    private MainMenuImpl mainMenu = new MainMenuImpl();//constructor
 
     public StartMenuImpl()
     {
@@ -31,6 +38,9 @@ public class StartMenuImpl implements Menu
         {
             Book book = new BookImpl();
 
+
+
+            //
             mainMenu.changeBook(book);
             mainMenu.loopOperations();
         }

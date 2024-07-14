@@ -1,3 +1,6 @@
+package Services.Menu;//generic
+import Entities.Book.Book;
+import Services.FileProcessing.BookToFileProcessorImpl;
 
 import java.util.Scanner;
 
@@ -114,7 +117,7 @@ public class MainMenuImpl implements Menu
 
                 catch (Exception e)
                 {
-                    System.out.println("Invalid Spreadsheet Number");
+                    System.out.println("Invalid Entities.Spreadsheet.Spreadsheet Number");
                 }
             }
         }

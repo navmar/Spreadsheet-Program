@@ -1,4 +1,6 @@
-import java.util.List;
+package Entities.Book;
+
+import Entities.Spreadsheet.Spreadsheet;
 
 public interface Book
 {

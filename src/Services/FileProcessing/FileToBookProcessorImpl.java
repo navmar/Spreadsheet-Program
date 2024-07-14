@@ -1,3 +1,8 @@
+package Services.FileProcessing;
+
+import Entities.Book.Book;
+import Entities.Book.BookImpl;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -8,7 +13,7 @@ import java.util.ArrayList;
 //confirmation msgs from each class here.
 //throws exception
 
-public class FileToBookProcessorImpl implements  FileToBookProcessor
+public class FileToBookProcessorImpl implements FileToBookProcessor
 {
 
     private static FileToBookProcessor instance = new FileToBookProcessorImpl();

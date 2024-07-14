@@ -1,4 +1,7 @@
+package Entities.Spreadsheet;
 
+import Entities.Cell.Cell;
+import Entities.Cell.CellImpl;
 
 public class SpreadsheetImpl implements Spreadsheet
 {

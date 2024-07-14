@@ -1,3 +1,5 @@
+package Services.Menu;
+
 public interface Menu
 {
     void displayOptions();

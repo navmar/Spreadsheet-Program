@@ -1,3 +1,6 @@
+package Services.Menu;
+
+import Entities.Book.Book;
 
 import java.util.Scanner;
 
@@ -29,7 +32,7 @@ public class SpreadsheetMenuImpl implements Menu
     {
         System.out.println();
         System.out.println("Pick an operation: ");
-        System.out.println("1. Edit Cell");
+        System.out.println("1. Edit Entities.Cell.Cell");
         System.out.println("2. View spreadsheet");
         System.out.println("3. Go back");
     }
@@ -91,11 +94,13 @@ public class SpreadsheetMenuImpl implements Menu
     public void loopOperations()
     {
         boolean cont = true;
+        //create scanner
         while (cont)
         {
             displayOptions();
             cont = handleInput();
         }
+        //close scanner
 
     }
 

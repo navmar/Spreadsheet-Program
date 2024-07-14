@@ -1,3 +1,7 @@
+package Entities.Book;
+
+import Entities.Spreadsheet.Spreadsheet;
+import Entities.Spreadsheet.SpreadsheetImpl;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -42,7 +46,7 @@ public class BookImpl implements Book
         spreadsheets.add(spreadsheet);
         if (!silentMode)
         {
-            System.out.println("Spreadsheet created.");
+            System.out.println("Entities.Spreadsheet.Spreadsheet created.");
         }
     }
 
@@ -50,7 +54,7 @@ public class BookImpl implements Book
     public void removeSpreadsheet(int spreadsheetNumber)
     {
         spreadsheets.remove(spreadsheetNumber);
-        System.out.println("Spreadsheet removed");
+        System.out.println("Entities.Spreadsheet.Spreadsheet removed");
     }
 
 

@@ -1,3 +1,7 @@
+package Services.FileProcessing;
+
+import Entities.Book.Book;
+
 import java.util.List;
 public interface FileToBookProcessor
 {

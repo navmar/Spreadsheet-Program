@@ -1,3 +1,5 @@
+package Entities.Cell;
+
 public class CellImpl implements Cell
 {
     private String cellContents;
@@ -17,7 +19,7 @@ public class CellImpl implements Cell
         cellContents = contentToAdd;
         if (!silentMode)
         {
-            System.out.println("Cell Updated Successfully");
+            System.out.println("Entities.Cell.Cell Updated Successfully");
         }
     }
 
